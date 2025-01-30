@@ -34,7 +34,7 @@ function App() {
           onClick={e => openTab(e, 'tab4')}>Tab 4</button>
       </div>
       <div id="tab1" class="tabcontent p-4 w-full flex flex-row justify-center items-center">
-        <Summary />
+        <Summary setNewTitle={replaceTitle} setNewTitle2={replacetwo} />
       </div>
       <div id="tab2" class="tabcontent p-4 w-full flex flex-row justify-center items-center">
         <Goals/>
@@ -48,6 +48,14 @@ function App() {
     </div>
 
   )
+
+  function replaceTitle(){
+    console.log("button clicked")
+    setTitle("first prop")
+  }
+  function replacetwo(){
+    setTitle("second clicked")
+  }
 
   function openTab(evt, tabName) {
     
