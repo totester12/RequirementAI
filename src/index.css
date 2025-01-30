@@ -3,4 +3,9 @@
 
 #root{
   font-family: inter;
+  color: white;
+}
+
+@theme {
+  --color-regal-blue: #10161f;
 }
