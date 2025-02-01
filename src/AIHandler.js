@@ -1,23 +1,26 @@
 import OpenAI from 'openai'
 import { useState } from 'react'
 
-function  getAIResponse(rolePrompt,userPrompt){
+async function getAIResponse(rolePrompt, userPrompt) {
+
+    const aiKey = import.meta.env.VITE_OPENAPI_KEY
+    console.log(aiKey+" hereee")
 
     console.log(rolePrompt + userPrompt)
 
-    /*const client = new OpenAI({ apiKey: aiKey, dangerouslyAllowBrowser: true })
+    const client = new OpenAI({ apiKey: aiKey, dangerouslyAllowBrowser: true })
     const summaryReturn = await client.chat.completions.create({
 
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: rolePrompt },
-        {
-          role: "user",
-          content: userPrompt,
-        },
-      ],
-      store: true,
-      stream: true,
+        model: "gpt-4o-mini",
+        messages: [
+            { role: "system", content: rolePrompt },
+            {
+                role: "user",
+                content: userPrompt,
+            },
+        ],
+        store: true,
+        stream: true,
 
 
     })
@@ -28,10 +31,14 @@ function  getAIResponse(rolePrompt,userPrompt){
 
     for await (const chunk of summaryReturn) {
 
-      builtString = builtString + chunk.choices[0]?.delta?.content || ""
+        
 
-      //setSummResponse(builtString)
-    }*/
+        builtString = builtString + chunk.choices[0]?.delta?.content || ""
+
+        //etterFunction(builtString)
+    }
+    
+
 
 
 

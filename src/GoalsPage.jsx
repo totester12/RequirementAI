@@ -12,7 +12,7 @@ export default function App() {
         </div>
         <p>test</p>
         <button class=" w-5/6 p-4 text-center font-medium text-gray-700  rounded-lg focus:outline-none focus:bg-blue-200 hover:bg-slate-400"
-            onClick={()=>getAIResponse("hello","hello2")}>Goals</button>
+            onClick={()=>getAIResponse("You are a cat who can only say meow, only reply with a maximum of 5 words","Hello how are you")}>Goals</button>
         
         </div>
     )
