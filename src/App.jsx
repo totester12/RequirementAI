@@ -11,6 +11,7 @@ function App() {
   
 
   const [summary, setSummary] = useState("Result Here")
+  const [goals,setGoals] = useState("Goals")
 
 
   return (
@@ -40,7 +41,7 @@ function App() {
         <Summary setNewSummary={setSummary} currSummary = {summary}/>
       </div>
       <div id="tab2" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
-        <Goals />
+        <Goals setGoals = {setGoals} currGoals ={goals}/>
       </div>
       <div id="tab3" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
         <Success />
