@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
 
-export default function App() {
+export default function App({summ}) {
 
     return (
-        <div>Hello 4</div>
+        <>
+            <textarea value={summ} class="h-96 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+        </>
     )
 
 }

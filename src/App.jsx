@@ -10,19 +10,16 @@ import Result from './ResultPage.jsx'
 function App() {
   
 
-  const [title, setTitle] = useState("Passing state example")
+  const [summary, setSummary] = useState("Result Here")
 
 
   return (
 
-    <div class='mainDiv absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_70%_80%_at_50%_-10%,rgba(10,119,198,0.3),rgba(255,255,255,0))]  '>
+    <div class='mainDiv absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_70%_80%_at_50%_-10%,rgba(10,119,198,0.3),rgba(255,255,255,0))]  '>
       <div >
         <p class="pt-8 pb-3 text-6xl font-bold tracking-tight bg-transparent flex flex-row text-center justify-center">
           <p class=" bg-transparent font-extrabold bg-gradient-to-bl  from-blue-600 via-teal-500 to-amber-400  bg-clip-text text-transparent ">Create PRD Templates with GenAI</p>
         </p>
-      </div>
-      <div class='titleDiv flex flex-row justify-center items-center '>
-        <p class="hidden">{title}</p>
       </div>
       <br />
       <div class="flex flex-row justify-center">
@@ -39,8 +36,8 @@ function App() {
             onClick={e => openTab(e, 'tab4')}>Result</button>
         </div>
       </div>
-      <div id="tab1" class="tabcontent p-4 w-full grid grid-cols-1 gap-4 justify-center items-center">
-        <Summary setNewTitle={replaceTitle} setNewTitle2={replacetwo} />
+      <div id="tab1" class="tabcontent flex flex-col  items-center">
+        <Summary setNewSummary={setSummary} currSummary = {summary}/>
       </div>
       <div id="tab2" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
         <Goals />
@@ -49,19 +46,13 @@ function App() {
         <Success />
       </div>
       <div id="tab4" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
-        <Result />
+        <Result summ={summary} />
       </div>
     </div>
 
   )
 
-  function replaceTitle() {
-    console.log("button clicked")
-    setTitle("first prop")
-  }
-  function replacetwo() {
-    setTitle("second clicked")
-  }
+
 
   function openTab(evt, tabName) {
 

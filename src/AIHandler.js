@@ -1,7 +1,8 @@
 import OpenAI from 'openai'
-import { useState } from 'react'
 
-async function getAIResponse(rolePrompt, userPrompt) {
+async function getAIResponse(rolePrompt, userPrompt, updateResponseArea) {
+
+    //Takes role prompt, user prompt and a function to set a value somewhere. Other areas then using the state of the setter have the response streamed.
 
     const aiKey = import.meta.env.VITE_OPENAPI_KEY
     console.log(aiKey+" hereee")
@@ -26,14 +27,16 @@ async function getAIResponse(rolePrompt, userPrompt) {
     })
 
 
-
     let builtString = ""
 
     for await (const chunk of summaryReturn) {
 
         
 
-        builtString = builtString + chunk.choices[0]?.delta?.content || ""
+        if (chunk.choices[0]?.delta?.content) {
+            builtString += chunk.choices[0].delta.content;
+        }
+        updateResponseArea(builtString)
 
         //etterFunction(builtString)
     }
