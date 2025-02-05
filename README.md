@@ -10,10 +10,11 @@ Built as a learning project around
 - Streaming Responses
 - State management between parent/child
 - Tab Menu
+- Prompting
 
 Not great things
 - State at top level changing on streaming is probably causing a lot of renders
 - Key in .env but not building out auth / backend for this.
 - No error catching
-- 
+- Lots more
 
