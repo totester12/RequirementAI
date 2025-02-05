@@ -18,3 +18,5 @@ Not great things
 - No error catching
 - Lots more
 
+If theres a key in the old commits its not active.
+
