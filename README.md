@@ -1,8 +1,19 @@
-# React + Vite
+# Requirement AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A quick pass at a PRD Builder using
+- React / Vite
+- Tailwind
+- OpenAI API
 
-Currently, two official plugins are available:
+Built as a learning project around
+- API Access
+- Streaming Responses
+- State management between parent/child
+- Tab Menu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Not great things
+- State at top level changing on streaming is probably causing a lot of renders
+- Key in .env but not building out auth / backend for this.
+- No error catching
+- 
+
