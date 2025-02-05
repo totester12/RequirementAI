@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import getAIResponse from './AIHandler'
 
-export default function App({ currSuccess,setSuccess }) {
+export default function App({ currSuccess,setSuccess,currGoals }) {
 
     const [successIndicators, setSuccessIndicators] = useState("");
 
@@ -20,7 +20,7 @@ export default function App({ currSuccess,setSuccess }) {
             />
             <button
                 onClick={() => getAIResponse(
-                    "Expand on the following success indicator",
+                    "You're an assistant to a product manager, they're writing a PRD and are going to pass you a key success indicator for the product along with a set of product goals, you'll recieve the key indicator in the initial sentence. For context here are the goals of the new product "+ currGoals +". The key success indicator is contained in the following prompt. Expand the key indicator and the goals into a set of CONCISE success metrics.",
                     successIndicators,
                     UpdateSuccess
                 )}

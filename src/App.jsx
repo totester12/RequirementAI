@@ -45,7 +45,7 @@ function App() {
         <Goals setGoals = {setGoals} currGoals ={goals} currSummary={summary}/>
       </div>
       <div id="tab3" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
-        <Success currSuccess={success} setSuccess = {setSuccess} />
+        <Success currSuccess={success} setSuccess = {setSuccess} currGoals={goals} />
       </div>
       <div id="tab4" class="tabcontent p-4 w-full flex flex-row justify-center items-center hidden">
         <Result summ={summary} goals={goals} succ={success} />
